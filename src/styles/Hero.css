@@ -1,0 +1,397 @@
+/* =========================================
+   HERO SECTION STYLES
+   ========================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 60px;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.hero-orb-1 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: -200px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(59, 130, 246, 0.08) 40%, transparent 70%);
+    filter: blur(60px);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    bottom: -100px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(168, 85, 247, 0.08) 40%, transparent 70%);
+    filter: blur(60px);
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.hero-text-side {}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--neon-purple);
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+}
+
+.hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4ade80;
+    animation: blink 2s ease-in-out infinite;
+}
+
+.hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 400;
+    color: #64748b;
+    margin-bottom: 24px;
+    min-height: 2.2em;
+}
+
+.hero-title-typed {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.hero-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background: var(--neon-purple);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 1s ease-in-out infinite;
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.75;
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+}
+
+.hero-stat-label {
+    font-size: 0.78rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+}
+
+/* --- Hero Visual Side --- */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-profile-ring {
+    position: relative;
+    width: 360px;
+    height: 360px;
+}
+
+.hero-ring-outer {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 1px dashed rgba(168, 85, 247, 0.3);
+    animation: orbit-container 20s linear infinite;
+}
+
+@keyframes orbit-container {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-ring-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: -5px;
+    left: calc(50% - 5px);
+    background: var(--neon-purple);
+    box-shadow: 0 0 12px var(--neon-purple);
+}
+
+.hero-profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--clr-bg), var(--clr-bg)) padding-box,
+        var(--grad-primary) border-box;
+    box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.1),
+        0 0 60px rgba(168, 85, 247, 0.25),
+        0 0 120px rgba(59, 130, 246, 0.1);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.hero-profile-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--grad-glow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(168, 85, 247, 0.3);
+    box-shadow: 0 0 60px rgba(168, 85, 247, 0.2);
+    font-size: 5rem;
+    color: rgba(168, 85, 247, 0.4);
+}
+
+.hero-floating-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: rgba(10, 10, 18, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--clr-border-glow);
+    border-radius: 14px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    animation: float 6s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+.hero-floating-card:nth-child(2) {
+    animation-delay: -2s;
+}
+
+.hero-floating-card:nth-child(3) {
+    animation-delay: -4s;
+}
+
+.card-figma {
+    bottom: 20px;
+    left: -60px;
+}
+
+.card-open {
+    top: 20px;
+    right: -50px;
+    animation-direction: reverse;
+}
+
+.card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.card-icon-figma {
+    background: rgba(255, 122, 0, 0.15);
+}
+
+.card-icon-open {
+    background: rgba(74, 222, 128, 0.15);
+}
+
+/* --- Scroll Indicator --- */
+.hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+    z-index: 1;
+}
+
+.hero-scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(168, 85, 247, 0.5), transparent);
+    animation: scroll-line 2s ease-in-out infinite;
+}
+
+@keyframes scroll-line {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    51% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .hero-profile-ring {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-desc {
+        margin: 0 auto 40px;
+    }
+
+    .card-figma {
+        bottom: 0;
+        left: -20px;
+    }
+
+    .card-open {
+        top: 0;
+        right: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-profile-ring {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-floating-card {
+        font-size: 0.74rem;
+        padding: 10px 14px;
+    }
+}
