@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import '../styles/Hero.css'
 
-const pfp = '/pfp.png'
+const pfp = '/picture.png'
 
 const roles = [
     'UI/UX Designer',
@@ -85,20 +85,7 @@ export default function Hero() {
                             </button>
                         </div>
 
-                        <div className="hero-stats">
-                            <div className="hero-stat">
-                                <span className="hero-stat-num">1+</span>
-                                <span className="hero-stat-label">Years Exp.</span>
-                            </div>
-                            <div className="hero-stat">
-                                <span className="hero-stat-num">10+</span>
-                                <span className="hero-stat-label">Projects</span>
-                            </div>
-                            <div className="hero-stat">
-                                <span className="hero-stat-num">4+</span>
-                                <span className="hero-stat-label">Tools</span>
-                            </div>
-                        </div>
+
                     </div>
 
                     {/* Visual Side */}

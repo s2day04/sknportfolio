@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import '../styles/Sections.css'
 
 export default function Experience() {
+    const [certOpen, setCertOpen] = useState(false)
+    const [devsDayCertOpen, setDevsDayCertOpen] = useState(false)
+
     return (
         <section className="section" id="experience">
             <div className="container">
@@ -25,8 +29,22 @@ export default function Experience() {
                                     </div>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
-                                    <div className="exp-date">Mar 2025 – Jun 2025</div>
-                                    <div className="tag tag-purple">Internship · 4 mos</div>
+                                    <div className="exp-date">3rd Mar – 3rd Jun 2025</div>
+                                    <div className="tag tag-purple">Internship · 3 mos</div>
+                                    <button
+                                        onClick={() => setCertOpen(true)}
+                                        style={{
+                                            background: 'none',
+                                            border: 'none',
+                                            color: '#a855f7',
+                                            cursor: 'pointer',
+                                            fontSize: '0.8rem',
+                                            textDecoration: 'underline',
+                                            padding: '2px 0',
+                                        }}
+                                    >
+                                        View Certificate
+                                    </button>
                                 </div>
                             </div>
                             <div className="exp-location">📍 Karachi, Sindh, Pakistan · On-site</div>
@@ -80,32 +98,107 @@ export default function Experience() {
                         </div>
                     </div>
                 </div>
+
                 {/* Certificates */}
                 <div className="edu-section">
                     <div className="section-label" style={{ marginTop: 20 }}>Certificates</div>
                     <div className="exp-timeline">
+                        {/* Dev's Day '25 Certification */}
                         <div className="exp-item">
                             <div className="glass exp-card">
                                 <div className="exp-header">
                                     <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start', flex: 1 }}>
-                                        <div className="exp-logo">🏆</div>
+                                        <div className="exp-logo">🎖️</div>
                                         <div className="exp-meta">
-                                            <div className="exp-company">UI/UX Design Certification</div>
-                                            <div className="exp-role">Professional Certificate</div>
+                                            <div className="exp-company">Dev's Day '25 Certification</div>
+                                            <div className="exp-role">FAST University · 2025</div>
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
-                                        <div className="tag tag-pink">Completed</div>
+                                        <div className="tag tag-purple">Recognized</div>
                                     </div>
                                 </div>
                                 <p className="exp-desc">
-                                    Earned certification highlighting expertise in UI/UX principles, wireframing, and interactive prototyping.
+                                    Recognized for active participation and technical engagement at Dev's Day '25, where my design was ranked <strong style={{ color: '#c084fc' }}>6th among 15+ teams</strong>, showcasing strong skills in modern development and UI/UX practices.
                                 </p>
+                                {/* Certificate Image Card */}
+                                <div
+                                    onClick={() => setDevsDayCertOpen(true)}
+                                    style={{
+                                        marginTop: 16,
+                                        borderRadius: 12,
+                                        overflow: 'hidden',
+                                        border: '1px solid rgba(168,85,247,0.25)',
+                                        cursor: 'pointer',
+                                        maxWidth: 420,
+                                        boxShadow: '0 4px 20px rgba(168,85,247,0.1)',
+                                        transition: 'box-shadow 0.3s ease',
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.boxShadow = '0 4px 28px rgba(168,85,247,0.3)'}
+                                    onMouseLeave={e => e.currentTarget.style.boxShadow = '0 4px 20px rgba(168,85,247,0.1)'}
+                                    title="Click to enlarge certificate"
+                                >
+                                    <img
+                                        src="/devsday-cert.png"
+                                        alt="Dev's Day '25 Certificate"
+                                        style={{ width: '100%', display: 'block', borderRadius: 12 }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* Internship Certificate Lightbox */}
+            {certOpen && (
+                <div
+                    onClick={() => setCertOpen(false)}
+                    style={{
+                        position: 'fixed', inset: 0, zIndex: 9999,
+                        background: 'rgba(0,0,0,0.85)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        cursor: 'zoom-out',
+                        backdropFilter: 'blur(6px)',
+                    }}
+                >
+                    <img
+                        src="/internship-cert.png"
+                        alt="Internship Certificate"
+                        style={{
+                            maxWidth: '90vw', maxHeight: '90vh',
+                            borderRadius: 16,
+                            boxShadow: '0 20px 60px rgba(0,0,0,0.7)',
+                        }}
+                        onClick={e => e.stopPropagation()}
+                    />
+                </div>
+            )}
+
+            {/* Dev's Day Certificate Lightbox */}
+            {devsDayCertOpen && (
+                <div
+                    onClick={() => setDevsDayCertOpen(false)}
+                    style={{
+                        position: 'fixed', inset: 0, zIndex: 9999,
+                        background: 'rgba(0,0,0,0.85)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        cursor: 'zoom-out',
+                        backdropFilter: 'blur(6px)',
+                    }}
+                >
+                    <img
+                        src="/devsday-cert.png"
+                        alt="Dev's Day '25 Certificate"
+                        style={{
+                            maxWidth: '90vw', maxHeight: '90vh',
+                            borderRadius: 16,
+                            boxShadow: '0 20px 60px rgba(0,0,0,0.7)',
+                        }}
+                        onClick={e => e.stopPropagation()}
+                    />
+                </div>
+            )}
         </section>
     )
 }

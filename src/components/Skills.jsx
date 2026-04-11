@@ -41,7 +41,7 @@ const skills = [
         icon: '✏️',
         name: 'Illustrator',
         desc: 'Basic vector illustration and icon creation for UI projects.',
-        level: 58,
+        level: 40,
         color: '#f97316',
     },
     {

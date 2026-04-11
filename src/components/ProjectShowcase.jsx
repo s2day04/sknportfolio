@@ -92,142 +92,138 @@ export default function ProjectShowcase({ project, onClose }) {
                     </button>
                 </div>
 
-                {/* Slider Area */}
-                <div style={{ position: 'relative', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {screens.length === 0 ? (
+                    <div style={{ color: '#475569', fontSize: '1rem', padding: '60px 0', textAlign: 'center' }}>
+                        <span style={{ fontSize: '3rem', display: 'block', marginBottom: '16px' }}>{project.icon}</span>
+                        No screens available yet.
+                    </div>
+                ) : (
+                    <>
+                        {/* Slider Area */}
+                        <div style={{ position: 'relative', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
-                    {/* Nav Arrows */}
-                    <button
-                        onClick={prevSlide}
-                        style={{
-                            position: 'absolute',
-                            left: 0,
-                            zIndex: 10,
-                            background: 'rgba(255,255,255,0.1)',
-                            border: 'none',
-                            borderRadius: '50%',
-                            width: '48px',
-                            height: '48px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#fff',
-                            cursor: 'pointer',
-                            backdropFilter: 'blur(10px)'
-                        }}
-                    >
-                        <ChevronLeft size={24} />
-                    </button>
-
-                    <button
-                        onClick={nextSlide}
-                        style={{
-                            position: 'absolute',
-                            right: 0,
-                            zIndex: 10,
-                            background: 'rgba(255,255,255,0.1)',
-                            border: 'none',
-                            borderRadius: '50%',
-                            width: '48px',
-                            height: '48px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#fff',
-                            cursor: 'pointer',
-                            backdropFilter: 'blur(10px)'
-                        }}
-                    >
-                        <ChevronRight size={24} />
-                    </button>
-
-                    {/* Carousel */}
-                    <div style={{ width: '80%', overflow: 'hidden' }}>
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={currentSlide}
-                                drag="x"
-                                dragConstraints={{ left: 0, right: 0 }}
-                                dragElastic={0.2}
-                                onDragEnd={dragEndHandler}
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -50 }}
-                                transition={{ duration: 0.4 }}
+                            {/* Nav Arrows */}
+                            <button
+                                onClick={prevSlide}
                                 style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    zIndex: 10,
+                                    background: 'rgba(255,255,255,0.1)',
+                                    border: 'none',
+                                    borderRadius: '50%',
+                                    width: '48px',
+                                    height: '48px',
                                     display: 'flex',
+                                    alignItems: 'center',
                                     justifyContent: 'center',
-                                    gap: isMobile ? '20px' : '0',
-                                    width: '100%',
-                                    cursor: 'grab'
+                                    color: '#fff',
+                                    cursor: 'pointer',
+                                    backdropFilter: 'blur(10px)'
                                 }}
                             >
-                                {currentScreens.map((screenId, idx) => (
-                                    <div key={`${currentSlide}-${idx}`} style={{
-                                        flexShrink: 0,
-                                        width: isMobile ? '240px' : '100%',
-                                        maxWidth: isMobile ? 'none' : '800px',
-                                        aspectRatio: isMobile ? '9/19.5' : '16/10',
-                                        background: '#111',
-                                        borderRadius: isMobile ? '36px' : '16px',
-                                        border: '8px solid #222',
-                                        boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#444',
-                                        fontSize: '1.2rem',
-                                        fontFamily: 'var(--font-mono)',
-                                        position: 'relative',
-                                        overflow: 'hidden'
-                                    }}>
-                                        {/* Simulated screen content */}
-                                        <div style={{
-                                            position: 'absolute',
-                                            inset: 0,
-                                            background: 'linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%)'
-                                        }} />
-                                        Screen {screenId}
-                                        {isMobile && (
-                                            <div style={{
-                                                position: 'absolute',
-                                                top: 0,
-                                                left: '50%',
-                                                transform: 'translateX(-50%)',
-                                                width: '40%',
-                                                height: '24px',
-                                                background: '#222',
-                                                borderBottomLeftRadius: '12px',
-                                                borderBottomRightRadius: '12px'
-                                            }} />
-                                        )}
-                                    </div>
-                                ))}
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
-                </div>
+                                <ChevronLeft size={24} />
+                            </button>
 
-                {/* Indicators */}
-                <div style={{ display: 'flex', gap: '8px', marginTop: '40px' }}>
-                    {Array.from({ length: totalSlides }).map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setCurrentSlide(i)}
-                            style={{
-                                width: '8px',
-                                height: '8px',
-                                borderRadius: '50%',
-                                background: currentSlide === i ? '#a855f7' : 'rgba(255,255,255,0.2)',
-                                border: 'none',
-                                padding: 0,
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease',
-                                transform: currentSlide === i ? 'scale(1.2)' : 'scale(1)'
-                            }}
-                            aria-label={`Go to slide ${i + 1}`}
-                        />
-                    ))}
-                </div>
+                            <button
+                                onClick={nextSlide}
+                                style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    zIndex: 10,
+                                    background: 'rgba(255,255,255,0.1)',
+                                    border: 'none',
+                                    borderRadius: '50%',
+                                    width: '48px',
+                                    height: '48px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#fff',
+                                    cursor: 'pointer',
+                                    backdropFilter: 'blur(10px)'
+                                }}
+                            >
+                                <ChevronRight size={24} />
+                            </button>
+
+                            {/* Carousel */}
+                            <div style={{ width: '80%', overflow: 'hidden' }}>
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={currentSlide}
+                                        drag="x"
+                                        dragConstraints={{ left: 0, right: 0 }}
+                                        dragElastic={0.2}
+                                        onDragEnd={dragEndHandler}
+                                        initial={{ opacity: 0, x: 50 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -50 }}
+                                        transition={{ duration: 0.4 }}
+                                        style={{
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            gap: isMobile ? '20px' : '0',
+                                            width: '100%',
+                                            cursor: 'grab'
+                                        }}
+                                    >
+                                        {currentScreens.map((imgSrc, idx) => (
+                                            <div key={`${currentSlide}-${idx}`} style={{
+                                                flexShrink: 0,
+                                                width: isMobile ? '240px' : '100%',
+                                                maxWidth: isMobile ? 'none' : '800px',
+                                                aspectRatio: isMobile ? '9/19.5' : '16/10',
+                                                background: '#111',
+                                                borderRadius: isMobile ? '36px' : '16px',
+                                                border: '8px solid #222',
+                                                boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                position: 'relative',
+                                                overflow: 'hidden'
+                                            }}>
+                                                <img
+                                                    src={imgSrc}
+                                                    alt={`Screen ${currentSlide * itemsPerSlide + idx + 1}`}
+                                                    style={{
+                                                        width: '100%',
+                                                        height: '100%',
+                                                        objectFit: 'cover',
+                                                        display: 'block'
+                                                    }}
+                                                />
+                                            </div>
+                                        ))}
+                                    </motion.div>
+                                </AnimatePresence>
+                            </div>
+                        </div>
+
+                        {/* Indicators */}
+                        <div style={{ display: 'flex', gap: '8px', marginTop: '40px' }}>
+                            {Array.from({ length: totalSlides }).map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setCurrentSlide(i)}
+                                    style={{
+                                        width: '8px',
+                                        height: '8px',
+                                        borderRadius: '50%',
+                                        background: currentSlide === i ? '#a855f7' : 'rgba(255,255,255,0.2)',
+                                        border: 'none',
+                                        padding: 0,
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s ease',
+                                        transform: currentSlide === i ? 'scale(1.2)' : 'scale(1)'
+                                    }}
+                                    aria-label={`Go to slide ${i + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </>
+                )}
 
             </div>
         </motion.div>

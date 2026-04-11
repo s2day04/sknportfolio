@@ -13,7 +13,21 @@ const projects = [
         icon: '📱',
         category: 'Mobile',
         figmaUrl: 'https://www.figma.com/design/OnskibCVPAIjLOgnJYsfVc/Nexovate-UI?node-id=0-1&t=D6KCGkxxFhTmMTXz-1',
-        screens: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        screens: [
+            '/projects/nexovate/1.jpg',
+            '/projects/nexovate/2.jpg',
+            '/projects/nexovate/3.jpg',
+            '/projects/nexovate/4.jpg',
+            '/projects/nexovate/5.jpg',
+            '/projects/nexovate/6.jpg',
+            '/projects/nexovate/7.jpg',
+            '/projects/nexovate/8.jpg',
+            '/projects/nexovate/9.jpg',
+            '/projects/nexovate/10.jpg',
+            '/projects/nexovate/11.jpg',
+            '/projects/nexovate/12.jpg',
+            '/projects/nexovate/013.jpg',
+        ]
     },
     {
         id: 2,
@@ -24,7 +38,16 @@ const projects = [
         icon: '☕',
         category: 'Mobile',
         figmaUrl: 'https://www.figma.com/design/M6NYEplNqYBu4s5ydI4swx/Coffee-Shop-App?node-id=0-1&t=hu4ApyAvgL704AQf-1',
-        screens: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        screens: [
+            '/projects/caramel/a1.png',
+            '/projects/caramel/a2.png',
+            '/projects/caramel/a3.png',
+            '/projects/caramel/a4.png',
+            '/projects/caramel/a5.png',
+            '/projects/caramel/a6.png',
+            '/projects/caramel/a7.png',
+            '/projects/caramel/a8.png',
+        ]
     },
     {
         id: 3,
@@ -35,18 +58,29 @@ const projects = [
         icon: '🚆',
         category: 'Mobile',
         figmaUrl: 'https://www.figma.com/design/oNSRa7fHNycr930kKzQj1r/DevDay?node-id=0-1&t=BXJN5SicNlBWSNIF-1',
-        screens: [1, 2, 3, 4, 5, 6]
+        screens: [
+            '/projects/railway/a.png',
+            '/projects/railway/b.png',
+            '/projects/railway/c.png',
+            '/projects/railway/d.png',
+            '/projects/railway/e.png',
+            '/projects/railway/f.png',
+            '/projects/railway/g.png',
+            '/projects/railway/h.png',
+            '/projects/railway/i.png',
+            '/projects/railway/j.png',
+        ]
     },
     {
         id: 4,
-        title: 'Dashboard Design System',
-        desc: 'Comprehensive design system and admin dashboard UI with consistent components, dark theme, and data visualization.',
-        tags: ['Design System', 'UI', 'Dashboard'],
+        title: 'BattingEdge',
+        desc: 'BattingEdge is an AI-powered batting coaching system designed to enhance player performance through data-driven insights. The UI focuses on clarity, real-time feedback visualization, and an intuitive user experience for both beginners and advanced players.',
+        tags: ['Final Year Project', 'UI Design', 'AI'],
         tagColors: ['blue', 'pink', 'purple'],
-        icon: '📊',
+        icon: '🏏',
         category: 'Web',
-        figmaUrl: null,
-        screens: [1, 2, 3, 4]
+        figmaUrl: 'https://www.figma.com/design/QsMjDggWk20fATULftwc6O/Final-Year-Project?node-id=0-1&t=lNQ1UjqCqQN181Tu-1',
+        screens: []
     }
 ]
 
@@ -180,4 +214,3 @@ export default function Projects() {
         </section>
     )
 }
-

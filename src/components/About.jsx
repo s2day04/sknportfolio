@@ -1,5 +1,5 @@
 import '../styles/Sections.css'
-const pfp = '/pfp.png'
+const pfp = '/f2.png'
 import { useState } from 'react'
 
 const tools = [
@@ -40,8 +40,7 @@ export default function About() {
                             Crafting Experiences <span className="gradient-text">That Users Love</span>
                         </h2>
                         <p className="about-desc">
-                            I'm a passionate <strong style={{ color: '#c084fc' }}>UI/UX Designer</strong> based in Dubai, UAE,
-                            focused on creating intuitive, user-centered, and visually engaging digital experiences.
+                            I'm a passionate <strong style={{ color: '#c084fc' }}>UI/UX Designer</strong> focused on creating intuitive, user-centered, and visually engaging digital experiences.
                         </p>
                         <p className="about-desc">
                             My design approach is rooted in <strong style={{ color: '#60a5fa' }}>usability, accessibility, and design thinking</strong>.
