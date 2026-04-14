@@ -77,12 +77,15 @@ export default function Hero() {
                             >
                                 <span>⬇</span> Download Resume
                             </a>
-                            <button
+                            <a
+                                href="/portfolio.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn-neon btn-outline"
-                                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                             >
-                                View My Work
-                            </button>
+                                <span>📄</span> Download PDF Portfolio
+                            </a>
                         </div>
 
 
