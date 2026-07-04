@@ -7,6 +7,7 @@ const tools = [
     { icon: '🖌️', name: 'Canva', level: 'Branding & Visual Design' },
     { icon: '✏️', name: 'Adobe Illustrator', level: 'Vector Graphics' },
     { icon: '🖼️', name: 'Adobe Photoshop', level: 'Basic Familiarity' },
+    { icon: '🗂️', name: 'Adobe XD', level: 'UI Prototyping' },
 ]
 
 export default function About() {
@@ -48,7 +49,7 @@ export default function About() {
                             from clean wireframes to interactive prototypes to high-fidelity UI designs.
                         </p>
                         <p className="about-desc">
-                            I value collaboration, consistency, and continuous learning. Currently open to <strong style={{ color: '#f472b6' }}>freelance, part-time, and remote design projects globally</strong>.
+                            I value collaboration, consistency, and continuous learning. Currently open to <strong style={{ color: '#f472b6' }}>freelance, full-time, and remote design projects globally</strong>.
                         </p>
 
                         <div className="about-tools">

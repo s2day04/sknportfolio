@@ -57,7 +57,7 @@ export default function Contact() {
                     Get In <span className="gradient-text">Touch</span>
                 </h2>
                 <p className="section-subtitle">
-                    Ready to collaborate? I'm currently open to freelance, part-time, and remote projects globally. Let's create something amazing.
+                    Ready to collaborate? I'm currently open to freelance, full-time, and remote projects globally. Let's create something amazing.
                 </p>
 
                 <div className="contact-wrap" style={{ marginTop: 60 }}>

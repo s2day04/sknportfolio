@@ -78,9 +78,8 @@ export default function Hero() {
                                 <span>⬇</span> Download Resume
                             </a>
                             <a
-                                href="/portfolio.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/Portfolio final.pdf"
+                                download="Portfolio final.pdf"
                                 className="btn-neon btn-outline"
                                 style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                             >

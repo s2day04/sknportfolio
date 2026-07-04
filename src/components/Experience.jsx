@@ -68,31 +68,30 @@ export default function Experience() {
                 <div className="edu-section">
                     <div className="section-label" style={{ marginTop: 20 }}>Education</div>
                     <div className="exp-timeline">
-                        <div className="exp-item">
-                            <div className="glass exp-card">
-                                <div className="exp-header">
+                        <div class="exp-item">
+                            <div class="glass exp-card">
+                                <div class="exp-header">
                                     <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start', flex: 1 }}>
-                                        <div className="exp-logo">🎓</div>
-                                        <div className="exp-meta">
-                                            <div className="exp-company">Bahria University</div>
-                                            <div className="exp-role">Bachelor's in Computer Science</div>
+                                        <div class="exp-logo">🎓</div>
+                                        <div class="exp-meta">
+                                            <div class="exp-company">Bahria University Karachi Campus</div>
+                                            <div class="exp-role">Bachelor of Science in Computer Science</div>
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
-                                        <div className="exp-date">Sep 2022 – Jun 2026</div>
-                                        <div className="tag tag-blue">In Progress</div>
+                                        <div class="exp-date">Sep 2022 – Jun 2026</div>
+                                        <div class="tag tag-blue">Completed</div>
                                     </div>
                                 </div>
-                                <div className="exp-location">📍 Bahria University</div>
-                                <p className="exp-desc">
-                                    Studying Computer Science with a focus on UI/UX design, mobile application design,
-                                    and web design. Actively building skills at the intersection of technology and design.
+                                <div class="exp-location">📍 Bahria University Karachi Campus</div>
+                                <p class="exp-desc">
+                                    Completed a Bachelor's degree in Computer Science with a strong interest in UI/UX design. Passionate about designing intuitive, user-friendly, and visually appealing digital experiences while combining technical knowledge with creative problem-solving.
                                 </p>
                                 <div style={{ display: 'flex', gap: 8, marginTop: 16, flexWrap: 'wrap' }}>
-                                    <span className="tag tag-purple">UI Design</span>
-                                    <span className="tag tag-blue">Mobile App Design</span>
-                                    <span className="tag tag-pink">Web Design</span>
-                                    <span className="tag tag-purple">Computer Science</span>
+                                    <span class="tag tag-purple">UI Design</span>
+                                    <span class="tag tag-blue">Mobile App Design</span>
+                                    <span class="tag tag-pink">Web Design</span>
+                                    <span class="tag tag-purple">Computer Science</span>
                                 </div>
                             </div>
                         </div>
